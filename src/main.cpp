@@ -3,18 +3,17 @@
 
 int main()
 {
-    unsigned int num = 0, n1 = 0, n2 = 0, n3 = 0, n4 = 0;
-    std::cin >> num;
-    n1 = num / 1000;
-    n2 = (num - n1 * 1000) / 100;
-    n3 = (num - n1 * 1000 - n2 * 100) / 10;
-    n4 = (num - n1 * 1000 - n2 * 100 - n3 * 10);
-    //std::printf("%d_%d_%d_%d\n", n1, n2, n3, n4);
-
-    if (n1 == n4 && n2 == n3)
+    unsigned int h = 0, a = 0, b = 0, nowDist = 0, days = 0;
+    std::cin >> h >> a >> b;
+    while (true)
     {
-        std::printf("%d", 1);
-        return 0;
+        days++;
+        nowDist += a;
+        if (nowDist >= h)
+        {
+            std::printf("%d", days);
+            return 0;
+        }
+        nowDist -= b;
     }
-    std::printf("%d", 0);
 }
