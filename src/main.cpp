@@ -1,31 +1,20 @@
 #include <iostream>
 #include <cmath>
 
-//(V*t%s+s)%s
-//S - длина окружности(км);
-//V - скорость(км/час);
-//T - время(час);
 int main()
 {
-    const int MKAD_LENGNH = 109;
-    int v = 0;
-    unsigned int vm = 0, t = 0, res = 0, dist = 0;
-    std::cin >> v >> t;
+    unsigned int num = 0, n1 = 0, n2 = 0, n3 = 0, n4 = 0;
+    std::cin >> num;
+    n1 = num / 1000;
+    n2 = (num - n1 * 1000) / 100;
+    n3 = (num - n1 * 1000 - n2 * 100) / 10;
+    n4 = (num - n1 * 1000 - n2 * 100 - n3 * 10);
+    //std::printf("%d_%d_%d_%d\n", n1, n2, n3, n4);
 
-    vm = std::abs(v);
-    dist = (vm * t % MKAD_LENGNH + MKAD_LENGNH) % MKAD_LENGNH;
-    //std::printf("Dist: %d\n", 0);
-    if (dist == 109 || dist == -109 || dist == 0)
+    if (n1 == n4 && n2 == n3)
     {
-        std::printf("%d", 0);
+        std::printf("%d", 1);
+        return 0;
     }
-    else if (v < 0)
-    {
-        std::printf("%d", MKAD_LENGNH - dist);
-    }
-    else
-    {
-        std::printf("%d", dist);
-    }
-    return 0;
+    std::printf("%d", 0);
 }
