@@ -3,17 +3,13 @@
 
 int main()
 {
-    unsigned int h = 0, a = 0, b = 0, nowDist = 0, days = 0;
-    std::cin >> h >> a >> b;
-    while (true)
+    int a = 0, b = 0;
+    std::cin >> a >> b;
+    if (a > b)
     {
-        days++;
-        nowDist += a;
-        if (nowDist >= h)
-        {
-            std::printf("%d", days);
-            return 0;
-        }
-        nowDist -= b;
+        std::printf("%d", a);
+        return 0;
     }
+    std::printf("%d", b);
+    return 0;
 }
