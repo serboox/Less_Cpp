@@ -3,49 +3,14 @@
 int main()
 {
     // put your code here
-    unsigned int h = 0, i = 0, s = 0, sec = 0;
-    std::cin >> sec;
+    unsigned int h1 = 0, i1 = 0, s1 = 0, sec1 = 0;
+    unsigned int h2 = 0, i2 = 0, s2 = 0, sec2 = 0;
+    std::cin >> h1 >> i1 >> s1 >> h2 >> i2 >> s2;
 
-    if ((sec % 86400) >= 0)
-    {
-        sec -= (sec / 86400) * 86400;
-    }
+    sec1 = h1 * 3600 + i1 * 60 + s1;
+    sec2 = h2 * 3600 + i2 * 60 + s2;
 
-    //std::printf("%d = %d %% %d\n", sec / 3600, sec, 3600);
-    if ((sec % 3600) >= 0)
-    {
-        h += sec / 3600;
-        sec -= h * 3600;
-    }
-
-    //std::printf("%d = %d %% %d\n", sec / 60, sec, 60);
-    if ((sec % 60) >= 0)
-    {
-        i += sec / 60;
-        sec -= i * 60;
-    }
-    if (sec > 0)
-    {
-        s += sec;
-    }
-
-    std::printf("%d:", h);
-    if (i >= 10)
-    {
-        std::printf("%d:", i);
-    }
-    else
-    {
-        std::printf("0%d:", i);
-    }
-
-    if (s >= 10)
-    {
-        std::printf("%d", s);
-    }
-    else
-    {
-        std::printf("0%d", s);
-    }
+    //std::printf("sec1:%d\nsec2:%d\n", sec1, sec2);
+    std::printf("%d", sec2 - sec1);
     return 0;
 }
