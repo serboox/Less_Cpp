@@ -3,27 +3,17 @@
 
 int main()
 {
-    size_t x = 0, i = 0;
-    int max = 0, max2 = 0;
-    while (true)
-    {
-        std::cin >> x;
-        if (x == 0)
-        {
-            break;
-        }
-        if (x > max)
-        {
-            max2 = max;
-            max = x;
-        }
-        else if (x <= max && x > max2)
-        {
-            max2 = x;
-        }
-        i++;
-    }
+    double n = 0;
+    std::cin >> n;
+    double sqrt5 = std::sqrt(5);
+    double arg1 = std::pow((1 + sqrt5) / 2, n);
+    //std::printf("arg1: %lf\n", arg1);
 
-    std::printf("%d", max2);
+    double arg2 = std::pow((1 - sqrt5) / 2, n);
+    //std::printf("arg2: %lf\n", arg2);
+
+    double res = 1 / sqrt5 * arg1 - arg2;
+    res = round(res);
+    std::printf("%d", (int)res);
     return 0;
 }
