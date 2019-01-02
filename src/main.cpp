@@ -3,18 +3,18 @@
 
 int main()
 {
-    int a = 0, b = 0;
-    std::cin >> a >> b;
-    if (a > b)
+    int a = 0, b = 0, c = 0;
+    std::cin >> a >> b >> c;
+    if (((a + c) > (b + c)) && (a > c))
     {
-        std::printf("%d", 1);
+        std::printf("%d", a);
         return 0;
     }
-    else if (b > a)
+    else if (b > c)
     {
-        std::printf("%d", 2);
+        std::printf("%d", b);
         return 0;
     }
-    std::printf("%d", 0);
+    std::printf("%d", c);
     return 0;
 }
