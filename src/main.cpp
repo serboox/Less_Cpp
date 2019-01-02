@@ -4,8 +4,7 @@
 int main()
 {
     size_t x = 0, i = 0;
-    int max = 0, maxCount = 1;
-    std::cin >> max;
+    int max = 0, max2 = 0;
     while (true)
     {
         std::cin >> x;
@@ -13,18 +12,18 @@ int main()
         {
             break;
         }
-        if (x == max)
-        {
-            maxCount++;
-        }
         if (x > max)
         {
+            max2 = max;
             max = x;
-            maxCount = 1;
+        }
+        else if (x <= max && x > max2)
+        {
+            max2 = x;
         }
         i++;
     }
 
-    std::printf("%d", maxCount);
+    std::printf("%d", max2);
     return 0;
 }
