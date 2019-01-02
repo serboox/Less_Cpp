@@ -3,13 +3,39 @@
 
 int main()
 {
-    int a = 0, b = 0, c = 0;
-    std::cin >> a >> b >> c;
-    if ((a * b > c) && ((c % a == 0) || (c % b == 0)))
+    int n = 0,
+        m = 0,
+        x = 0, // Long
+        y = 0; // Short
+    std::cin >> n >> m >> x >> y;
+
+    if (n > m)
     {
-        std::printf("%s", "YES");
-        return 0;
+        int buff = n;
+        n = m;
+        m = buff;
     }
-    std::printf("%s", "NO");
+    int min1 = 0;
+    min1 = y;
+    if (x < y)
+    {
+        min1 = x;
+    }
+
+    int e = n - x, w = m - y, min2 = 0;
+    min2 = w;
+    if (e < w)
+    {
+        min2 = e;
+    }
+
+    int min = 0;
+    min = min2;
+    if (min1 < min2)
+    {
+        min = min1;
+    }
+
+    std::printf("%d", min);
     return 0;
 }
