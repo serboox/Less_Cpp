@@ -6,20 +6,19 @@ int main()
     size_t x = 0;
     std::cin >> x;
 
-    size_t i = 2;
+    float i = 0;
     while (true)
     {
-        //std::printf("%zu\n", x % i);
-        if ((x % i) == 0)
+        float pow = std::pow(2, i);
+        if (pow > x)
         {
-            std::printf("%zu", i);
             return 0;
         }
-        if (i > x)
+        if (i != 0)
         {
-            std::printf("%zu", x);
-            return 0;
+            std::printf(" ");
         }
+        std::printf("%d", (int)pow);
         i++;
     }
     return 0;
