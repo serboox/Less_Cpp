@@ -3,24 +3,24 @@
 
 int main()
 {
-    int x = 0;
+    size_t x = 0;
     std::cin >> x;
 
-    size_t i = 1;
+    size_t i = 2;
     while (true)
     {
-        int pow = i * i;
-        if (pow > x)
+        //std::printf("%zu\n", x % i);
+        if ((x % i) == 0)
         {
+            std::printf("%zu", i);
             return 0;
         }
-        if (i != 1)
+        if (i > x)
         {
-            std::printf(" ");
+            std::printf("%zu", x);
+            return 0;
         }
-        std::printf("%d", pow);
         i++;
     }
-
     return 0;
 }
