@@ -3,12 +3,9 @@
 
 int main()
 {
-    int a = 0, b = 0, c = 0, d = 0;
-    std::cin >> a >> b >> c >> d;
-    int x = 0, y = 0;
-    x = std::abs(a - c);
-    y = std::abs(b - d);
-    if ((x == 2 && y == 1) || (y == 2 && x == 1))
+    int a = 0, b = 0, c = 0;
+    std::cin >> a >> b >> c;
+    if ((a * b > c) && ((c % a == 0) || (c % b == 0)))
     {
         std::printf("%s", "YES");
         return 0;
