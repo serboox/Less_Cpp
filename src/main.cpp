@@ -3,18 +3,13 @@
 
 int main()
 {
-    int a = 0, b = 0, c = 0;
-    std::cin >> a >> b >> c;
-    if (a == b && b == c)
+    int a = 0, b = 0, c = 0, d = 0;
+    std::cin >> a >> b >> c >> d;
+    if ((a == c) || (b == d))
     {
-        std::printf("%d", 3);
+        std::printf("%s", "YES");
         return 0;
     }
-    else if (a != b && a != c && b != c)
-    {
-        std::printf("%d", 0);
-        return 0;
-    }
-    std::printf("%d", 2);
+    std::printf("%s", "NO");
     return 0;
 }
