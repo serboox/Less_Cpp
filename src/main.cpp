@@ -5,11 +5,16 @@ int main()
 {
     int a = 0, b = 0, c = 0;
     std::cin >> a >> b >> c;
-    if (((a + b) > c) && ((a + c) > b) && ((b + c) > a) && (a > 0 && b > 0 && c > 0))
+    if (a == b && b == c)
     {
-        std::printf("YES");
+        std::printf("%d", 3);
         return 0;
     }
-    std::printf("NO");
+    else if (a != b && a != c && b != c)
+    {
+        std::printf("%d", 0);
+        return 0;
+    }
+    std::printf("%d", 2);
     return 0;
 }
