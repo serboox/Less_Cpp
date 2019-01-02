@@ -8,7 +8,8 @@ int main()
     int x = 0, y = 0;
     x = std::abs(a - c);
     y = std::abs(b - d);
-    if (x == y)
+    if ((x == y) || ((x >= 0 && x <= 1) && (y >= 0 && y <= 1)) ||
+        ((a == c) || (b == d)))
     {
         std::printf("%s", "YES");
         return 0;
