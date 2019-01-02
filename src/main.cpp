@@ -3,8 +3,7 @@
 
 int main()
 {
-    size_t x = 0;
-    size_t i = 0;
+    size_t x = 0, i = 0, res = 0;
     while (true)
     {
         std::cin >> x;
@@ -12,9 +11,10 @@ int main()
         {
             break;
         }
+        res += x;
         i++;
     }
 
-    std::printf("%zu", i);
+    std::printf("%zu", res);
     return 0;
 }
