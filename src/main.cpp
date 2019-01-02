@@ -5,21 +5,22 @@ int main()
 {
     size_t x = 0;
     std::cin >> x;
-
-    float i = 0;
+    double i = 0;
     while (true)
     {
-        float pow = std::pow(2, i);
-        if (pow > x)
+        if (std::pow(2, i) == x)
         {
+            std::printf("YES");
             return 0;
         }
-        if (i != 0)
+
+        if (i > 4096)
         {
-            std::printf(" ");
+            break;
         }
-        std::printf("%d", (int)pow);
         i++;
     }
+
+    std::printf("NO");
     return 0;
 }
