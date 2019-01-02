@@ -3,7 +3,9 @@
 
 int main()
 {
-    size_t x = 0, i = 0, res = 0;
+    size_t x = 0, i = 0;
+    int max = 0;
+    std::cin >> max;
     while (true)
     {
         std::cin >> x;
@@ -11,10 +13,13 @@ int main()
         {
             break;
         }
-        res += x;
+        if (x > max)
+        {
+            max = x;
+        }
         i++;
     }
 
-    std::printf("%zu", res);
+    std::printf("%d", max);
     return 0;
 }
