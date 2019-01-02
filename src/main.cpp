@@ -1,41 +1,25 @@
 #include <iostream>
 #include <cmath>
 
-int main()
+main()
 {
-    int n = 0,
-        m = 0,
-        x = 0, // Long
-        y = 0; // Short
-    std::cin >> n >> m >> x >> y;
-
-    if (n > m)
+    int a, b, c;
+    std::cin >> a >> b >> c;
+    if (a > b)
     {
-        int buff = n;
-        n = m;
-        m = buff;
-    }
-    int min1 = 0;
-    min1 = y;
-    if (x < y)
-    {
-        min1 = x;
+        std::swap(a, b);
     }
 
-    int e = n - x, w = m - y, min2 = 0;
-    min2 = w;
-    if (e < w)
+    if (a > c)
     {
-        min2 = e;
+        std::swap(a, c);
     }
 
-    int min = 0;
-    min = min2;
-    if (min1 < min2)
+    if (b > c)
     {
-        min = min1;
+        std::swap(b, c);
     }
 
-    std::printf("%d", min);
+    std::printf("%d %d %d", a, b, c);
     return 0;
 }
