@@ -3,32 +3,32 @@
 
 int main()
 {
-    double n = 0;
-    std::cin >> n;
-    double i = 0;
+    size_t lastVal = 0, count = 1, countMax = 1, i = 0;
     while (true)
     {
-        double sqrt5 = std::sqrt(5);
-        double arg1 = std::pow((1 + sqrt5) / 2, i);
-        //std::printf("arg1: %lf\n", arg1);
-
-        double arg2 = std::pow((1 - sqrt5) / 2, i);
-        //std::printf("arg2: %lf\n", arg2);
-
-        double res = 1 / sqrt5 * arg1 - arg2;
-        res = round(res);
-
-        if (res == n)
+        size_t x = 0;
+        std::cin >> x;
+        if (x == 0)
         {
-            std::printf("%d", (int)i);
-            return 0;
+            break;
         }
-        else if (res > n)
+
+        if (x == lastVal)
         {
-            std::printf("%d", -1);
-            return 0;
+            count++;
+            if (count > countMax)
+            {
+                countMax = count;
+            }
+        }
+        else
+        {
+            count = 1;
+            lastVal = x;
         }
         i++;
     }
+
+    std::printf("%zu", countMax);
     return 0;
 }
