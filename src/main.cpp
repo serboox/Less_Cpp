@@ -7,9 +7,14 @@ int main()
     std::cin >> a >> b;
     if (a > b)
     {
-        std::printf("%d", a);
+        std::printf("%d", 1);
         return 0;
     }
-    std::printf("%d", b);
+    else if (b > a)
+    {
+        std::printf("%d", 2);
+        return 0;
+    }
+    std::printf("%d", 0);
     return 0;
 }
