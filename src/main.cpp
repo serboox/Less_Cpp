@@ -9,15 +9,19 @@
 // Pi = std::atan(1) * 4
 int main()
 {
-    int p = 0;
-    int x = 0, y = 0, k = 0;
-    std::cin >> p >> x >> y >> k;
-    double res = (x * 100) + y;
-    for (int i = 1; i <= k; i++)
+    int i = 0;
+    double sum = 0;
+    while (true)
     {
-        res += std::trunc((res / 100) * p);
-        //std::printf("%d:%lf\n", i, res);
+        int n = 0;
+        std::cin >> n;
+        if (n == 0)
+        {
+            break;
+        }
+        sum += n;
+        i++;
     }
-    std::printf("%d %d", int(res / 100), int(res - (int(res / 100) * 100)));
+    std::printf("%.10lf", sum / i);
     return 0;
 }
