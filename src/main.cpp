@@ -9,10 +9,13 @@
 // Pi = std::atan(1) * 4
 int main()
 {
-    double a = 0, b = 0, c = 0, p = 0, s = 0;
-    std::cin >> a >> b >> c;
-    p = (a + b + c) / 2;
-    s = std::sqrt(p * (p - a) * (p - b) * (p - c));
-    std::printf("%.6lf", s);
+    double p = 0;
+    int x = 0, y = 0;
+    std::cin >> p >> x >> y;
+    double res = (x * 100) + y;
+    res += (res / 100) * p;
+    //std::printf("%lf\n", res);
+    std::printf("%d %d", int(res / 100), int(res - (int(res / 100) * 100)));
+    //std::printf("%d %d", (int)x, (int)std::round((x - (int)x) * 100));
     return 0;
 }

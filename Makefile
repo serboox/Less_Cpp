@@ -14,11 +14,11 @@ install:
 
 init:
 	@echo "+ $@"
-	cmake ./CMakeLists.txt -B ${CMAKE_FOLDER_PATH}
+	cmake ./CMakeLists.txt --build ${CMAKE_FOLDER_PATH}
 
 build:
 	@echo "+ $@"
-	cd build && make
+	cd ${CMAKE_FOLDER_PATH} && make
 
 run:
 	@echo "+ $@"
