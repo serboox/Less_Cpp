@@ -3,7 +3,7 @@
 
 int main()
 {
-    size_t prevVal = 0, curVal = 0, nextVal = 0, countMax = 0;
+    int prevVal = 0, curVal = 0, nextVal = 0, lastMaxPosition = 0, minMaxRout = -1;
     size_t i = 1;
     while (true)
     {
@@ -19,11 +19,27 @@ int main()
 
         if (curVal > prevVal && curVal > nextVal && i > 2)
         {
-            countMax++;
+            if (lastMaxPosition != 0 && minMaxRout == -1)
+            {
+                minMaxRout = i - lastMaxPosition;
+            }
+            else if (lastMaxPosition != 0 && (minMaxRout > (i - lastMaxPosition)))
+            {
+                minMaxRout = i - lastMaxPosition;
+            }
+            if (lastMaxPosition != i)
+            {
+                lastMaxPosition = i;
+            }
         }
         i++;
     }
 
-    std::printf("%zu", countMax);
+    if (minMaxRout == -1)
+    {
+        minMaxRout = 0;
+    }
+
+    std::printf("%d", minMaxRout);
     return 0;
 }
