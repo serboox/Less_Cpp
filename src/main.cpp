@@ -3,7 +3,8 @@
 
 int main()
 {
-    size_t lastVal = 0, count = 1, countMax = 1, i = 0;
+    size_t prevVal = 0, curVal = 0, nextVal = 0, countMax = 0;
+    size_t i = 1;
     while (true)
     {
         size_t x = 0;
@@ -12,19 +13,13 @@ int main()
         {
             break;
         }
+        prevVal = curVal;
+        curVal = nextVal;
+        nextVal = x;
 
-        if (x == lastVal)
+        if (curVal > prevVal && curVal > nextVal && i > 2)
         {
-            count++;
-            if (count > countMax)
-            {
-                countMax = count;
-            }
-        }
-        else
-        {
-            count = 1;
-            lastVal = x;
+            countMax++;
         }
         i++;
     }
