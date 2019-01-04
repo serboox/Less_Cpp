@@ -11,6 +11,6 @@ int main()
 {
     double x = 0;
     std::cin >> x;
-    std::printf("%.6lf", x - (int)x);
+    std::printf("%d", (int)((x - (int)x) * 10));
     return 0;
 }
