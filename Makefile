@@ -4,7 +4,7 @@ CMAKE_FOLDER_PATH?=./build
 # Default target executed when no arguments are given to make.
 default_target: all
 
-.PHONY: test clean build
+.PHONY: build test 
 
 all: build run
 
