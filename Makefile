@@ -14,7 +14,7 @@ install:
 
 init:
 	@echo "+ $@"
-	cmake ./CMakeLists.txt --build ${CMAKE_FOLDER_PATH}
+	cmake ./CMakeLists.txt -B${CMAKE_FOLDER_PATH} -H.
 
 build:
 	@echo "+ $@"
