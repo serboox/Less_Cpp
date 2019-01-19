@@ -22,7 +22,7 @@ build:
 
 run:
 	@echo "+ $@"
-	cd ${CMAKE_FOLDER_PATH} && ./labs_cpp
+	cd ${CMAKE_FOLDER_PATH} && ./less_cpp
 
 
 

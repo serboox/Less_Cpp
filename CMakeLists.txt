@@ -1,15 +1,15 @@
-cmake_minimum_required(VERSION 3.11)
-project(labs_cpp)
+cmake_minimum_required(VERSION 3.10)
+project(less_cpp)
 
 set(CMAKE_CXX_STANDARD 14)
 
 if(CMAKE_SYSTEM_NAME MATCHES "Linux")
     set(LINUX ON)
     set(CMAKE_C_COMPILER gcc)
-    set(CMAKE_C_FLAGS -m32)
     set(CMAKE_CXX_COMPILER g++)
-    set(CMAKE_CXX_FLAGS -m32)
 elseif(WIN32)
+        #set(CMAKE_C_FLAGS -m32)
+        #set(CMAKE_CXX_FLAGS -m32)
 elseif(APPLE)
     set(BUILD_ARCH "-m64")
 else()
@@ -45,4 +45,10 @@ if ((CMAKE_GENERATOR MATCHES "Visual Studio") AND (CMAKE_GENERATOR_TOOLSET STREQ
             "host compiler, pass -Thost=x64 on the CMake command line.")
 endif()
 
-add_executable(labs_cpp src/main.cpp)
+file(GLOB ALL_SRC_FILES
+    "./src/*.h"
+    "./src/*.c"
+    "./src/*.cpp"
+)
+
+add_executable(less_cpp ${ALL_SRC_FILES})
