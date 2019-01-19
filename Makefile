@@ -24,5 +24,9 @@ run:
 	@echo "+ $@"
 	cd ${CMAKE_FOLDER_PATH} && ./less_cpp
 
+preprocessor:
+	@echo "+ $@"
+	g++ -E ./src/main.cpp -o ./src/main.ii
+
 
 

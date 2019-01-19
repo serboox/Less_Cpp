@@ -1,7 +1,5 @@
 #include <cmath>
-#include <iomanip> //Для подробного вывода вещественных числел
 #include <iostream>
-#include <vector>
 
 // trunc() - отсекает вещественную часть, например -3.14 будет -3
 // floor() - округляет вниз, например -3.14 будет -4
@@ -10,7 +8,7 @@
 // Pi = std::atan(1) * 4
 int main()
 {
-  size_t n = 0;
+  size_t n =               0;
   std::scanf("%zu", &n);
   std::cin.ignore();
   double x = 0;
